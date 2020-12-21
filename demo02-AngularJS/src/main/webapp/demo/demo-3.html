@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初始化指令</title>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+</head>
+<body ng-app ng-init="myName='默认名称'">
+姓名：<input ng-model="myName">
+显示：<input value="{{myName}}" readonly>
+</body>
+</html>

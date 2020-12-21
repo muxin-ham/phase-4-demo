@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内置服务</title>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <script>
+        var app = angular.module('myAPP',[]);
+        app.controller('myController',function ($scope,$http) {
+            $scope.getList = function () {
+                //通过内置服务$http发送请求
+                //为了防止js中字符串转json对象时报错，必须将key和value同时用""包裹
+                $http.get('../js/demo.js').success(
+                    function (response) {
+                        $scope.list = response;
+                    }
+                )
+            };
+        })
+    </script>
+</head>
+<body ng-app="myAPP" ng-controller="myController" ng-init="getList()">
+<table>
+    <thead>
+    <td>姓名</td>
+    <td>年龄</td>
+    <td>性别</td>
+    </thead>
+    <tr ng-repeat="entity in list">
+        <td>{{entity.name}}</td>
+        <td>{{entity.age}}</td>
+        <td>{{entity.sex}}</td>
+    </tr>
+</table>
+</body>
+</html>

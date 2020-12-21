@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件指令</title>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <script>
+        //定义模块
+        var app = angular.module('myAPP',[]);
+        //定义控制器
+        app.controller('myController',function ($scope) {
+            $scope.add = function () {
+                $scope.z = parseInt($scope.x)+parseInt($scope.y);
+            }
+        })
+    </script>
+</head>
+<body ng-app="myAPP" ng-controller="myController">
+    <input ng-model="x"> + <input ng-model="y"> =
+    <input value="{{z}}" readonly><br>
+    <button ng-click="add()">运算</button>
+</body>
+</html>

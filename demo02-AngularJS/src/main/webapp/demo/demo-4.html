@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制器</title>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <script>
+        //定义模块
+        var app = angular.module('myAPP',[]);//注意module拼写，模型
+        //定义控制器
+        app.controller('myController',function ($scope) {
+            $scope.add=function () {
+                return parseInt($scope.x)+parseInt($scope.y)
+            }
+        })
+    </script>
+</head>
+<body ng-app="myAPP" ng-controller="myController" ng-init="myName='默认名称'">
+    <input ng-model="x"> + <input ng-model="y"> =
+    <input value="{{add()}}" readonly>
+</body>
+</html>

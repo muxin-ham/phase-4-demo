@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环数组</title>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+    <script>
+        var app = angular.module('myAPP',[]);
+        app.controller('myController',function ($scope) {
+            $scope.list = [1001,1002,1003];//定义数组，注意元素不能重复
+        })
+    </script>
+</head>
+<body ng-app="myAPP" ng-controller="myController">
+<table>
+    <thead>
+    <td>ID</td>
+    </thead>
+    <tr ng-repeat="entity in list">
+        <td>{{entity}}</td>
+    </tr>
+</table>
+</body>
+</html>

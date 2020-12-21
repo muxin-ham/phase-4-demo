@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+    <script src="../plugins/angularjs/angular.min.js"></script>
+</head>
+<body ng-app>
+    姓名：<input ng-model="name">请求<!--myname的变量值放在了$scope域中-->
+    <br>
+    响应：<input value="{{name}}" readonly>
+
+</body>
+</html>
